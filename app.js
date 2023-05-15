@@ -4,12 +4,14 @@ const ejs = require("ejs");
 const _ = require("lodash");
 const { default: mongoose, Schema } = require("mongoose");
 const todaysDate = require(__dirname + "/date.js");
-const port = process.env.PORT || 3000;
+const path = require("path");
 
+const port = process.env.PORT || 3000;
 let app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(`${__dirname}/public`));
+app.use(express.static(path.join(__dirname, "public")));
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 mongoose.connect(
