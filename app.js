@@ -22,7 +22,7 @@ const toDosSchema = new Schema({
 
 const ToDos = mongoose.model("ToDos", toDosSchema);
 
-app.get("brilliant-capybara-03df32/", (req, res) => {
+app.get("/", (req, res) => {
   ToDos.find({})
     .then((foundToDo) => {
       res.render("todo", { todaysDate: todaysDate(), toDos: foundToDo });
