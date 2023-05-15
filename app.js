@@ -4,7 +4,7 @@ const ejs = require("ejs");
 const _ = require("lodash");
 const { default: mongoose, Schema } = require("mongoose");
 const todaysDate = require(__dirname + "/date.js");
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 let app = express();
 
