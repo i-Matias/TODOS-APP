@@ -4,7 +4,7 @@ const ejs = require("ejs");
 const _ = require("lodash");
 const { default: mongoose, Schema } = require("mongoose");
 const todaysDate = require(__dirname + "/date.js");
-const port = "brilliant-capybara-03df32";
+const port = 3000;
 
 let app = express();
 
@@ -22,7 +22,7 @@ const toDosSchema = new Schema({
 
 const ToDos = mongoose.model("ToDos", toDosSchema);
 
-app.get("/", (req, res) => {
+app.get("brilliant-capybara-03df32/", (req, res) => {
   ToDos.find({})
     .then((foundToDo) => {
       res.render("todo", { todaysDate: todaysDate(), toDos: foundToDo });
