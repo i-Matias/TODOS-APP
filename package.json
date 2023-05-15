@@ -4,6 +4,7 @@
   "description": "Todos-App where you can add you todos remove them, see when you have created them and so on",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
